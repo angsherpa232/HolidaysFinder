@@ -4,7 +4,8 @@ const fetchDataMixin = {
   data() {
     return {
       holidays: [],
-      loading: false
+      loading: false,
+      api_key: process.env.VUE_APP_API
     };
   },
   methods: {
@@ -13,9 +14,7 @@ const fetchDataMixin = {
       this.loading = true;
       const country = selectedCountry;
       axios
-        .get(
-          `https://holidayapi.com/v1/holidays?key=f5299a0f-a61c-44d5-808c-51a5569a84c5&country=${country}&year=2018`
-        )
+        .get(`https://holidayapi.com/v1/holidays?key=${this.api_key}&country=${country}&year=2018`)
         // eslint-disable-next-line arrow-parens
         .then(res => {
           this.loading = false;
