@@ -3,7 +3,7 @@
     <h3>Filter by country</h3>
     <div class="add">
       <form @submit.prevent="onSubmit">
-        <input type="text" v-model.trim="country" placeholder="Country ..." />
+        <input type="text" v-model.trim="country" placeholder="Country ..." required />
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -12,6 +12,7 @@
 
 <script>
 import countries from "country-list";
+import fetchDataMixin from "../fetchDataMixin";
 
 export default {
   name: "FilterCountry",
@@ -20,10 +21,13 @@ export default {
       country: ""
     };
   },
+  mixins: [fetchDataMixin],
   methods: {
     onSubmit() {
+      // Gets the ISO 3166-1 alpha-2 format for respective country
       this.$emit("submitted", countries.getCode(this.country));
-      this.country = "";
+      // Only clears field if data fetched successfully
+      this.country = this.holidays.length === 0 ? this.country : "";
     }
   }
 };
