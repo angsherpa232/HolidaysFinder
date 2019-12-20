@@ -1,16 +1,14 @@
 <template>
-  <div class="todos">
-    <div class="todo" v-for="h in holidays" :key="h.uuid">
-      <span class="holidayName">{{ h.name | statement }}</span>
-      <br />
-      <p>{{ formatDateToString(h.date, h.weekday.date) }}</p>
-    </div>
+  <div class="holiday">
+    <span class="holidayName">{{ holiday.name | statement }}</span>
+    <br />
+    <p>{{ formatDateToString(holiday.date, holiday.weekday.date) }}</p>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["holidays"],
+  props: ["holiday"],
   methods: {
     formatDateToString(date, weekday) {
       const dateObject = new Date(date);
@@ -36,13 +34,7 @@ export default {
   white-space: pre-wrap;
 }
 
-.todos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1rem;
-}
-
-.todo {
+.holiday {
   border: 1px solid #ccc;
   background: #41b883;
   padding: 1rem;
@@ -50,11 +42,5 @@ export default {
   text-align: center;
   position: relative;
   cursor: pointer;
-}
-
-@media (max-width: 760px) {
-  .todos {
-    grid-template-columns: 1fr;
-  }
 }
 </style>

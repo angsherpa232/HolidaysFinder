@@ -1,20 +1,44 @@
 <template>
   <div class="container">
     <Header />
-    <Holidays />
+    <filter-country @submitted="fetchData" />
+    <div v-if="message">
+      <message-dialog :message="message" />
+    </div>
+    <div v-if="loading">
+      <Spinner />
+    </div>
+    <div v-if="!loading">
+      <Holidays :holidays="holidays" />
+    </div>
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line import/no-unresolved
 import Holidays from "./components/Holidays.vue";
 import Header from "./components/Header.vue";
+import FilterCountry from "./components/FilterCountry.vue";
+import Spinner from "./components/Spinner.vue";
+import fetchDataMixin from "./fetchDataMixin";
+import MessageDialog from "./components/MessageDialog.vue";
 
 export default {
   name: "app",
+  data() {
+    return {
+      message: false
+    };
+  },
   components: {
     Holidays,
-    Header
+    Header,
+    FilterCountry,
+    Spinner,
+    MessageDialog
+  },
+  mixins: [fetchDataMixin],
+  created() {
+    this.message = `Search for holidays by entering the country name in the above field.`;
   }
 };
 </script>
@@ -34,7 +58,6 @@ body {
 .container {
   max-width: 1100px;
   margin: auto;
-  overflow: auto;
   padding: 0 2rem;
 }
 </style>
