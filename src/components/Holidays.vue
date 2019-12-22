@@ -9,7 +9,11 @@ import Holiday from "./Holiday.vue";
 
 export default {
   name: "Holidays",
-  props: ["holidays"],
+  props: {
+    holidays: {
+      type: Array
+    }
+  },
   components: {
     Holiday
   }

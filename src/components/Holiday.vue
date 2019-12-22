@@ -8,7 +8,11 @@
 
 <script>
 export default {
-  props: ["holiday"],
+  props: {
+    holiday: {
+      type: Object
+    }
+  },
   methods: {
     formatDateToString(date, weekday) {
       const dateObject = new Date(date);
