@@ -8,6 +8,18 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "lint",
+      "eslint src --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm run test:unit"
+    }
+  },
   "dependencies": {
     "axios": "^0.19.0",
     "core-js": "^3.4.3",
@@ -24,6 +36,8 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
     "vue-template-compiler": "^2.6.10"
   }
 }
