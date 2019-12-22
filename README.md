@@ -1,6 +1,6 @@
 This project (Holidays by Country [HC]) was bootstrapped with [Vue-cli-3](vue create).
 
-# PACKAGE MANAGER (PM)
+# HOLIDAYS BY COUNTRY (HC)
 
 It is a single page and mobile friendly web application that provides the holidays info based on chosen country.
 
