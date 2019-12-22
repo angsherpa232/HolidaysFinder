@@ -1,9 +1,9 @@
 <template>
   <div>
     <h3>Filter by country</h3>
-    <div class="add">
+    <div>
       <form @submit.prevent="onSubmit">
-        <input type="text" v-model.trim="country" placeholder="Country ..." required />
+        <input type="text" data-country v-model.trim="country" placeholder="Country ..." required />
         <input type="submit" value="Submit" />
       </form>
     </div>
@@ -18,7 +18,7 @@ export default {
   name: "FilterCountry",
   data() {
     return {
-      country: ""
+      country: null
     };
   },
   mixins: [fetchDataMixin],

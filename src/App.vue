@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header />
+    <!-- Refactor if-else statement -->
     <filter-country @submitted="fetchData" />
     <div v-if="message">
       <message-dialog :message="message" />
@@ -26,7 +27,10 @@ export default {
   name: "app",
   data() {
     return {
-      message: false
+      message: false,
+      holidays: [],
+      loading: false,
+      api_key: process.env.VUE_APP_API
     };
   },
   components: {
