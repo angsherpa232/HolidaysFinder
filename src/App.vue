@@ -1,12 +1,11 @@
 <template>
   <div class="container">
     <Header />
-    <!-- Refactor if-else statement -->
-    <filter-country @submitted="fetchData" />
+    <filter-by-country @submitted="fetchData" />
     <div v-if="message">
       <message-dialog :message="message" />
     </div>
-    <div v-if="loading">
+    <div v-else-if="loading">
       <Spinner />
     </div>
     <div v-if="!loading">
@@ -18,7 +17,7 @@
 <script>
 import Holidays from "./components/Holidays.vue";
 import Header from "./components/Header.vue";
-import FilterCountry from "./components/FilterCountry.vue";
+import FilterByCountry from "./components/FilterByCountry.vue";
 import Spinner from "./components/Spinner.vue";
 import fetchDataMixin from "./fetchDataMixin";
 import MessageDialog from "./components/MessageDialog.vue";
@@ -36,7 +35,7 @@ export default {
   components: {
     Holidays,
     Header,
-    FilterCountry,
+    FilterByCountry,
     Spinner,
     MessageDialog
   },

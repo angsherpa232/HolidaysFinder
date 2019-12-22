@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <h1>Enjoy your holidays.</h1>
+    <h1>Know your holidays.</h1>
   </div>
 </template>
 

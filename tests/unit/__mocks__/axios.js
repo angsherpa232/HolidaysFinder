@@ -1,6 +1,5 @@
 export default {
   async get() {
-    console.log("hooho");
     return {
       data: {
         holidays: [
