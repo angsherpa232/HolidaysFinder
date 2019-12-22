@@ -2,7 +2,7 @@ This project (Holidays by Country [HC]) was bootstrapped with [Vue-cli-3](vue cr
 
 # HOLIDAYS BY COUNTRY (HC)
 
-It is a single page and mobile friendly web application that provides the holidays info based on chosen country.
+It is a responsive single page web application that provides the holidays info based on the chosen country. This app is powered by holidayapi.com.
 
 ## Getting Started
 
@@ -27,6 +27,13 @@ Install the necessary node modules specified in [package.json] using:
 ``` 
 npm install
 ```
+### Create .env.local file in the root directory to store your API key. (important step)
+
+``` 
+touch .env.local
+```
+In this file create a variable that holds your API key as it's value:
+VUE_APP_API = YOUR_API_KEY (One can get public API from holidayapi.com) 
 
 ### Compiles and minifies for production
 
