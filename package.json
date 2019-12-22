@@ -9,11 +9,10 @@
     "lint": "vue-cli-service lint"
   },
   "lint-staged": {
-    "*.js": [
-      "lint"
-    ],
-    "*.vue": [
-      "lint"
+    "src/**/*.{js,vue}": [
+      "lint",
+      "eslint src --fix",
+      "git add"
     ]
   },
   "husky": {
