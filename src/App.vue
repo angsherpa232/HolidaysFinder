@@ -41,7 +41,7 @@ export default {
   },
   mixins: [fetchDataMixin],
   created() {
-    this.message = `Search for holidays by entering the country name in the above field.`;
+    this.message = `Get started by providing the country name in the input field.`;
   }
 };
 </script>

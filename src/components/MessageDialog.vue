@@ -1,8 +1,6 @@
 <template>
   <div class="message">
-    <h4>
-      {{ message }}
-    </h4>
+    <h4>{{ message }}</h4>
   </div>
 </template>
 
@@ -18,5 +16,6 @@ export default {
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.26);
   text-align: center;
   padding: 10px;
+  border-radius: 10px;
 }
 </style>

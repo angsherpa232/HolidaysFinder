@@ -18,4 +18,10 @@ export default {
   margin: 10px 0;
   border-radius: 10px;
 }
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 22px;
+  }
+}
 </style>
