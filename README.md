@@ -1,4 +1,4 @@
-This project (Holidays by Country [HC]) was bootstrapped with [Vue-cli-3](vue create).
+This project (Holidays by Country [[HC]](https://heuristic-haibt-f52344.netlify.com/)) was bootstrapped with [Vue-cli-3](vue create).
 
 # HOLIDAYS BY COUNTRY (HC)
 
