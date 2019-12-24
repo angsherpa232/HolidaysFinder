@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>Filter Holidays by country:</h3>
     <div>
       <form @submit.prevent="onSubmit">
         <input type="text" data-country v-model.trim="country" placeholder="Country ..." required />
@@ -36,19 +35,40 @@ export default {
 <style scoped>
 form {
   display: flex;
-  margin-bottom: 10px;
+  margin: 10px auto;
+  max-width: 300px;
 }
+
 input[type="text"] {
   flex: 10;
   padding: 10px;
-  border: 1px solid #41b883;
+  border: 2px solid #41b883;
+  border-radius: 10px;
   outline: 0;
+  margin-right: -6px;
+  z-index: 10;
+  font-size: 22px;
 }
 input[type="submit"] {
-  flex: 2;
+  flex: 3;
   background: #41b883;
   color: #fff;
-  border: 1px solid #41b883;
+  border: 1px solid #a75c46;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="submit"]:focus {
+  outline: none;
+}
+
+@media (max-width: 760px) {
+  input[type="text"] {
+    font-size: 12px;
+  }
 }
 </style>
